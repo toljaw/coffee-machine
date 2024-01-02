@@ -18,8 +18,14 @@ public class Main {
             double price = 0;
 
             switch (choice){
-                case "off" -> machineIsOn = false;
-                case "report" -> System.out.println("REPORT: \nWater: " + resWater + "\nMilk: " + resMilk + "\nCoffee: " + resCoffee + "\nMoney: " + resMoney);
+                case "off" -> {
+                    machineIsOn = false;
+                    continue;
+                }
+                case "report" -> {
+                    System.out.println("REPORT: \nWater: " + resWater + "\nMilk: " + resMilk + "\nCoffee: " + resCoffee + "\nMoney: " + resMoney);
+                    continue;
+                }
                 // TODO 2: order a drink
                 case "espresso" -> {
                     price = 1.5;
@@ -59,7 +65,27 @@ public class Main {
                 // TODO 4: make drink
             } else{
                 System.out.println("Please enjoy your drink...");
+                // remove resources
+                switch (choice){
+                    case "espresso" -> {
+                        resWater -= 50;
+                        resMilk -= 0;
+                        resCoffee -= 18;
+                    }
+                    case "latte" -> {
+                        resWater -= 200;
+                        resMilk -= 150;
+                        resCoffee -= 24;
+                    }
+                    case "cappuccino" -> {
+                        resWater -= 250;
+                        resMilk -= 100;
+                        resCoffee -= 24;
+                    }
+
+                }
             }
+
 
 
 
