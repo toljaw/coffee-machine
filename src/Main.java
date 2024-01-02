@@ -18,8 +18,15 @@ public class Main {
             double price = 0;
 
             switch (choice){
-                case "off" -> machineIsOn = false;
-                case "report" -> System.out.println("REPORT: \nWater: " + resWater + "\nMilk: " + resMilk + "\nCoffee: " + resCoffee + "\nMoney: " + resMoney);
+                case "off" -> {
+                    machineIsOn = false;
+                    continue;
+                }
+                case "report" -> {
+                    System.out.println("REPORT: \nWater: " + resWater + "\nMilk: " + resMilk + "\nCoffee: " + resCoffee + "\nMoney: " + resMoney);
+                    continue;
+                }
+
                 // TODO 2: order a drink
                 case "espresso" -> {
                     price = 1.5;
@@ -54,7 +61,6 @@ public class Main {
             double moneyInsert = scan.nextDouble();
             if (moneyInsert < price){
                 System.out.println("\nSorry, that's not enough. Please make a new order...");
-                machineIsOn = false;
 
                 // TODO 4: make drink
             } else{
