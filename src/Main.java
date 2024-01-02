@@ -8,7 +8,7 @@ public class Main {
         double resMoney = 0;
 
         boolean machineIsOn = true;
-        while (machineIsOn){
+        while (machineIsOn) {
             System.out.println("Please choose your drink/report/off...");
 
 
@@ -17,9 +17,9 @@ public class Main {
             String choice = scan.nextLine();
             double price = 0;
 
-            switch (choice){
+            switch (choice) {
 
-              
+
                 case "off" -> {
                     machineIsOn = false;
                     continue;
@@ -33,25 +33,25 @@ public class Main {
                 // TODO 2: order a drink
                 case "espresso" -> {
                     price = 1.5;
-                    if (resWater >= 50 && resMilk >= 0 && resCoffee >= 18){
+                    if (resWater >= 50 && resMilk >= 0 && resCoffee >= 18) {
                         System.out.println("espresso");
-                    }else{
+                    } else {
                         System.out.println("not enough ressource... please another order...");
                     }
                 }
                 case "latte" -> {
                     price = 2.5;
-                    if (resWater >= 200 && resMilk >= 150 && resCoffee >= 24){
+                    if (resWater >= 200 && resMilk >= 150 && resCoffee >= 24) {
                         System.out.println("latte");
-                    }else{
+                    } else {
                         System.out.println("not enough ressource... please another order...");
                     }
                 }
                 case "cappuccino" -> {
-                    price =3;
-                    if (resWater >= 250 && resMilk >= 100 && resCoffee >= 24){
+                    price = 3;
+                    if (resWater >= 250 && resMilk >= 100 && resCoffee >= 24) {
                         System.out.println("cappuccino");
-                    }else{
+                    } else {
                         System.out.println("not enough ressource... please another order...");
                     }
                 }
@@ -60,16 +60,45 @@ public class Main {
 
 
             // TODO 3: pay the bill
-            System.out.println("Your Drink cost " + price + "$. \nPlease insert the right amount of money...");
-            double moneyInsert = scan.nextDouble();
-            if (moneyInsert < price){
-                System.out.println("\nSorry, that's not enough. Please make a new order...");
+            System.out.println("How many quarters? ");
+            int quarter = scan.nextInt();
+            System.out.println("How many dimes? ");
+            int dimes = scan.nextInt();
+            System.out.println("How many nickels? ");
+            int nickels = scan.nextInt();
+            System.out.println("How many pennies? ");
+            int pennies = scan.nextInt();
+            double totalInsert = quarter * 0.25 + dimes * 0.1 + nickels * 0.5 + pennies * 0.01;
+
+            if (totalInsert < price) {
+                System.out.println("\nSorry, that's not enough. Please make a new order...\n");
 
                 // TODO 4: make drink
-            } else{
+            } else if (totalInsert > price) {
+                System.out.println("You get " + (totalInsert - price) + "$ in change...");
+                resMoney += price;
+                switch (choice) {
+                    case "espresso" -> {
+                        resWater -= 50;
+                        resMilk -= 0;
+                        resCoffee -= 18;
+                    }
+                    case "latte" -> {
+                        resWater -= 200;
+                        resMilk -= 150;
+                        resCoffee -= 24;
+                    }
+                    case "cappuccino" -> {
+                        resWater -= 250;
+                        resMilk -= 100;
+                        resCoffee -= 24;
+                    }
+                }
+            } else {
                 System.out.println("Please enjoy your drink...");
                 // remove resources
-                switch (choice){
+                resMoney += price;
+                switch (choice) {
                     case "espresso" -> {
                         resWater -= 50;
                         resMilk -= 0;
@@ -86,17 +115,13 @@ public class Main {
                         resCoffee -= 24;
                     }
 
+
                 }
             }
-
-
-
 
 
         }
 
 
-
     }
-
 }
