@@ -18,14 +18,10 @@ public class Main {
             double price = 0;
 
             switch (choice){
-                case "off" -> {
-                    machineIsOn = false;
-                    continue;
-                }
-                case "report" -> {
-                    System.out.println("REPORT: \nWater: " + resWater + "\nMilk: " + resMilk + "\nCoffee: " + resCoffee + "\nMoney: " + resMoney);
-                    continue;
-                }
+                case "off" -> machineIsOn = false;
+
+                case "report" -> System.out.println("REPORT: \nWater: " + resWater + "\nMilk: " + resMilk + "\nCoffee: " + resCoffee + "\nMoney: " + resMoney);
+
                 // TODO 2: order a drink
                 case "espresso" -> {
                     price = 1.5;
