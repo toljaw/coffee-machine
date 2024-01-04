@@ -6,7 +6,7 @@ public class CashDesk {
     double nickle;
     double penny;
 
-    // Konstruktor:
+    // Constructor:
     public CashDesk(double price, double quarter, double dime, double nickle, double penny) {
         this.price = price;
         this.quarter = quarter;

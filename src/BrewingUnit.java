@@ -6,7 +6,7 @@ public class BrewingUnit {
     int resCoffee;
     double resMoney;
 
-    // Konstruktor:
+    // Constructor:
     public BrewingUnit(int resWater, int resMilk, int resCoffee, double resMoney) {
         //this.choice = choice;
         this.resWater = resWater;

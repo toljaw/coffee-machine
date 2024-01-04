@@ -6,7 +6,7 @@ public class Recipe {
     int coffee;
     double price;
 
-    // Konstruktor:
+    // Constructor:
     public Recipe(String name, int water, int milk, int coffee, double price) {
         this.name = name;
         this.water = water;
