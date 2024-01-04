@@ -2,6 +2,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        BrewingUnit brew1 = new BrewingUnit(2000,2000,1500,0);
+        brew1.report();
+        /*
+        this code was a previous version without classes:
+
         int resWater = 2000;
         int resMilk = 2000;
         int resCoffee = 2000;
@@ -121,7 +126,7 @@ public class Main {
 
 
         }
-
+*/
 
     }
 }
