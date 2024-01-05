@@ -1,6 +1,7 @@
 public class BrewingUnit {
     // Attribute:
     // no need for?: String choice;
+
     int resWater;
     int resMilk;
     int resCoffee;
@@ -10,7 +11,7 @@ public class BrewingUnit {
     public BrewingUnit(int resWater, int resMilk, int resCoffee, double resMoney) {
         //this.choice = choice;
         this.resWater = resWater;
-        this.resMilk =resMilk;
+        this.resMilk = resMilk;
         this.resCoffee = resCoffee;
         this.resMoney = resMoney;
     }
