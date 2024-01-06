@@ -27,10 +27,21 @@ public class BrewingUnit {
 
     //CheckResources...
     public boolean resources() {
-        if (this.resWater >= recEspresso.water && this.resMilk >= recEspresso.milk && this.resCoffee >= recEspresso.coffee){
-            return true;
-        } else {
-            return false;
+
+        switch(this.drink){
+            case "espresso" -> {
+                return this.resWater >= recEspresso.water && this.resMilk >= recEspresso.milk && this.resCoffee >= recEspresso.coffee;
+            }
+            case "latte" -> {
+                return this.resWater >= recLatte.water && this.resMilk >= recLatte.milk && this.resCoffee >= recLatte.coffee;
+            }
+            case "cappuccino" -> {
+                return this.resWater >= recCappuccino.water && this.resMilk >= recCappuccino.milk && this.resCoffee >= recCappuccino.coffee;
+            }
+            default -> {
+                return false;
+            }
+            
         }
 
 

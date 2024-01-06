@@ -20,14 +20,13 @@ public class Main {
                     machineOn = false;
                     continue;
                 }
-                case "espresso" -> {
+                case "espresso", "latte", "cappuccino" -> {
                     brew1.drink = choice;
-                    System.out.println(brew1.drink);
                     boolean resource = brew1.resources();
-                    if (resource) {
-                        brew1.makeDrink();
-                    } else {
+                    if (!resource) {
                         System.out.println("not enough resources... make a different order...");
+                    } else {
+                        System.out.println("drink more");
                     }
                 }
 
